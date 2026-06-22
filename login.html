@@ -1,0 +1,102 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Just For You</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <div class="hearts-bg" id="heartsBg"></div>
+    
+    <!-- Main container -->
+    <div class="auth-container">
+        <!-- Decorative rose top -->
+        <div class="rose-decoration">
+            <i class="fas fa-heart"></i>
+        </div>
+        
+        <!-- Card -->
+        <div class="auth-card">
+            <!-- Header -->
+            <div class="auth-header">
+                <div class="moon-icon">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <h1> Hy Welcome ,<br><span class="beautiful-text">Beautiful .</span></h1>
+                <p class="subtitle"> <p>Made with <i class="fas fa-heart heart-beat"></i> just for you</p>  ...</p>
+            </div>
+            
+            <!-- Form -->
+            <form id="loginForm" class="auth-form">
+                <!-- Email field -->
+                <div class="input-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i> Your Email
+                    </label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            placeholder="Enter your email address" 
+                            required
+                            autocomplete="email"
+                        >
+                        <span class="input-icon">💌</span>
+                    </div>
+                </div>
+                
+                <!-- Password field -->
+                <div class="input-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i> Secret Password
+                    </label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            placeholder="Enter your  secret password" 
+                            required
+                            autocomplete="current-password"
+                        >
+                        <span class="input-icon toggle-password" id="togglePassword">
+                            <i class="fas fa-eye-slash"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Error message -->
+                <div class="error-message" id="errorMessage">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span id="errorText"></span>
+                </div>
+                
+                <!-- Submit button -->
+                <button type="submit" class="btn-login" id="loginBtn">
+                    <span class="btn-text">Login </span>
+                    <i class="fas fa-heart btn-heart"></i>
+                </button>
+            </form>
+            
+            <!-- Footer -->
+            <div class="auth-footer">
+                <p>Made with <i class="fas fa-heart heart-beat"></i>  just for you only  for you </p>
+                <div class="sparkle-divider">
+                    <span>✦</span><span>✧</span><span>✦</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

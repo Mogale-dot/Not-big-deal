@@ -1,0 +1,588 @@
+/* ============================================
+   DATE-PLANNER.CSS - Romantic Date Planner
+   ============================================ */
+
+/* --- Date Section --- */
+.date-section {
+    background: var(--white-pure);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-card);
+    border: 2px solid rgba(255, 133, 162, 0.1);
+    animation: fadeSlideIn 0.4s ease;
+}
+
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+.section-label i {
+    color: var(--pink-deep);
+    font-size: 20px;
+}
+
+/* ============================================
+   CALENDAR CARD
+   ============================================ */
+.calendar-card {
+    background: var(--white-soft);
+    border-radius: 16px;
+    padding: 20px 15px;
+    border: 1px solid rgba(255, 133, 162, 0.15);
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.calendar-month {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--text-dark);
+    text-align: center;
+    flex: 1;
+}
+
+.cal-nav-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 133, 162, 0.3);
+    background: var(--white-pure);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pink-medium);
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.cal-nav-btn:hover {
+    background: rgba(255, 133, 162, 0.1);
+    border-color: var(--pink-deep);
+}
+
+.cal-nav-btn:active {
+    transform: scale(0.9);
+}
+
+/* --- Calendar Grid --- */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.cal-day-name {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--pink-medium);
+    padding: 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cal-day {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: 500;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.cal-day.empty {
+    cursor: default;
+}
+
+.cal-day:not(.empty):not(.past):hover {
+    background: rgba(255, 133, 162, 0.1);
+}
+
+.cal-day:not(.empty):not(.past):active {
+    transform: scale(0.9);
+    background: rgba(255, 133, 162, 0.2);
+}
+
+.day-number {
+    font-size: 14px;
+    color: var(--text-dark);
+    z-index: 1;
+}
+
+/* Today */
+.cal-day.today {
+    background: rgba(255, 133, 162, 0.08);
+}
+
+.cal-day.today .day-number {
+    color: var(--pink-deep);
+    font-weight: 700;
+}
+
+.today-dot {
+    font-size: 8px;
+    position: absolute;
+    bottom: 3px;
+    animation: bounceHeart 1s ease-in-out infinite;
+}
+
+/* Past Days */
+.cal-day.past {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Selected Day */
+.cal-day.selected {
+    background: var(--gradient-hero) !important;
+    box-shadow: 0 4px 15px rgba(255, 77, 122, 0.4);
+    animation: selectPop 0.3s ease;
+}
+
+@keyframes selectPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.cal-day.selected .day-number {
+    color: white;
+    font-weight: 700;
+}
+
+.selected-heart {
+    font-size: 12px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    animation: floatHeart 1.5s ease-in-out infinite;
+}
+
+@keyframes floatHeart {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* ============================================
+   SELECTED DATE DISPLAY
+   ============================================ */
+.selected-date-display {
+    background: var(--white-pure);
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-card);
+    border: 2px dashed rgba(255, 133, 162, 0.3);
+    text-align: center;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.select-prompt {
+    color: var(--text-soft);
+    font-size: 14px;
+    font-style: italic;
+}
+
+.selected-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected-date-badge,
+.selected-type-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--pink-lightest);
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--pink-dark);
+}
+
+.selected-date-badge i {
+    color: var(--pink-deep);
+}
+
+/* ============================================
+   DATE TYPE CARDS
+   ============================================ */
+.date-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px;
+}
+
+.date-type-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    background: var(--white-soft);
+    border: 2px solid rgba(255, 133, 162, 0.15);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.date-type-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: var(--card-color, var(--pink-medium));
+    border-radius: 0 4px 4px 0;
+    transition: width 0.3s ease;
+}
+
+.date-type-card:hover {
+    border-color: var(--card-color, var(--pink-medium));
+    transform: translateX(4px);
+    box-shadow: 0 6px 20px rgba(255, 77, 122, 0.1);
+}
+
+.date-type-card:hover::before {
+    width: 6px;
+}
+
+.date-type-card:active {
+    transform: scale(0.98);
+}
+
+.date-type-card.selected {
+    border-color: var(--card-color, var(--pink-deep));
+    background: linear-gradient(135deg, var(--white-soft) 0%, rgba(255, 133, 162, 0.08) 100%);
+    box-shadow: 0 8px 25px rgba(255, 77, 122, 0.2);
+}
+
+.date-type-card.selected::before {
+    width: 6px;
+}
+
+.type-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.date-type-card:hover .type-icon {
+    transform: scale(1.2) rotate(-5deg);
+}
+
+.type-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.type-info h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 3px;
+}
+
+.type-info p {
+    font-size: 11px;
+    color: var(--text-soft);
+    line-height: 1.4;
+}
+
+.type-check {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 133, 162, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.date-type-card.selected .type-check {
+    background: var(--gradient-hero);
+    border-color: transparent;
+    color: white;
+    animation: selectPop 0.3s ease;
+}
+
+/* ============================================
+   CUSTOM IDEA INPUT
+   ============================================ */
+.custom-idea-wrapper {
+    position: relative;
+}
+
+.custom-idea-wrapper textarea {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid rgba(255, 133, 162, 0.2);
+    border-radius: 16px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    color: var(--text-dark);
+    background: var(--white-soft);
+    resize: vertical;
+    min-height: 80px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.custom-idea-wrapper textarea:focus {
+    border-color: var(--pink-medium);
+    box-shadow: 0 0 0 4px rgba(255, 133, 162, 0.1);
+    background: var(--white-pure);
+}
+
+.custom-idea-wrapper textarea::placeholder {
+    color: #c4a6b4;
+    font-style: italic;
+}
+
+.char-counter {
+    text-align: right;
+    font-size: 11px;
+    color: var(--text-soft);
+    margin-top: 6px;
+}
+
+/* ============================================
+   SAVE BUTTON
+   ============================================ */
+.save-section {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-save-date {
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #ffb6d1, #ff85a2, #ff4d7a);
+    background-size: 200% 200%;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 25px rgba(255, 77, 122, 0.3);
+    transition: all 0.3s ease;
+    animation: btnShimmer 3s ease infinite;
+}
+
+@keyframes btnShimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.btn-save-date:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 77, 122, 0.5);
+}
+
+.btn-save-date:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+.btn-save-date:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    animation: none;
+}
+
+.btn-save-date.ready {
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 8px 25px rgba(255, 77, 122, 0.3); }
+    50% { box-shadow: 0 8px 40px rgba(255, 77, 122, 0.6); }
+}
+
+.btn-save-date.saving {
+    opacity: 0.8;
+}
+
+.btn-save-date.saved {
+    background: linear-gradient(135deg, #4CAF50, #66BB6A);
+    animation: none;
+}
+
+.save-hint {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--text-soft);
+    font-style: italic;
+    transition: color 0.3s ease;
+}
+
+/* ============================================
+   SAVED DATE CARD
+   ============================================ */
+.saved-date-card {
+    animation: fadeSlideIn 0.5s ease;
+}
+
+.saved-card-inner {
+    background: var(--white-pure);
+    border-radius: 24px;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: var(--shadow-hover);
+    border: 2px solid rgba(255, 133, 162, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.saved-card-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-hero);
+}
+
+.saved-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.saved-card-header i {
+    color: var(--pink-deep);
+    font-size: 20px;
+    animation: pulseIcon 2s ease-in-out infinite;
+}
+
+.saved-card-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--text-dark);
+}
+
+.saved-date-big {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--pink-dark);
+    margin-bottom: 12px;
+}
+
+.saved-date-big i {
+    font-size: 24px;
+}
+
+.saved-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 15px;
+    color: var(--text-medium);
+    margin-bottom: 20px;
+}
+
+.saved-icon {
+    font-size: 24px;
+}
+
+.saved-card-actions {
+    margin-bottom: 15px;
+}
+
+.btn-change {
+    padding: 10px 24px;
+    background: transparent;
+    border: 2px solid var(--pink-soft);
+    border-radius: 25px;
+    color: var(--pink-dark);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-change:hover {
+    background: rgba(255, 133, 162, 0.1);
+    border-color: var(--pink-deep);
+}
+
+.saved-card-sparkle {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .date-types-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .date-type-card {
+        padding: 14px;
+    }
+    
+    .type-icon {
+        font-size: 28px;
+    }
+    
+    .calendar-card {
+        padding: 15px 10px;
+    }
+    
+    .cal-day-name {
+        font-size: 10px;
+    }
+}
