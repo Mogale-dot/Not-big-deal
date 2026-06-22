@@ -1,1 +1,164 @@
   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Our Secret Place</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/date-planner.css">  
+    <link rel="stylesheet" href="css/questions.css">
+    <link rel="stylesheet" href="css/timeline.css">
+</head>
+<body>
+    <!-- Floating particles background -->
+    <div class="particles-bg" id="particlesBg"></div>
+    
+    <!-- Mobile Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- Main Container -->
+    <div class="dashboard-container">
+        
+        <!-- Hamburger Menu Button (Mobile Only) -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <div class="hamburger-heart">💕</div>
+        </button>
+        
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="profile-avatar">
+                    <span class="avatar-letter">P</span>
+                    <div class="avatar-heart">💕</div>
+                </div>
+                <h3 class="welcome-text">Welcome, <span>CuteFace </span></h3>
+                <p class="since-text">Your secret place ✨</p>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item active" data-page="home">
+                    <i class="fas fa-home-heart"></i>
+                    <span>Home</span>
+                    <span class="nav-sparkle">✧</span>
+                </li>
+                <li class="nav-item" data-page="questions">
+                    <i class="fas fa-heart-circle"></i>
+                    <span>About </span>
+                    <span class="nav-sparkle">✧</span>
+                </li>
+                <li class="nav-item" data-page="date-planner">
+                    <i class="fas fa-calendar-heart"></i>
+                    <span>Date Planner</span>
+                    <span class="nav-sparkle">✧</span>
+                </li>
+                <li class="nav-item" data-page="timeline">
+                    <i class="fas fa-book-heart"></i>
+                    <span>My lady</span>
+                    <span class="nav-sparkle">✧</span>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <button class="btn-logout" id="btnLogout">
+                    <i class="fas fa-door-open"></i>
+                    <span>See You Later</span>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- Home Page -->
+            <section class="page active" id="page-home">
+                <div class="home-hero">
+                    <div class="hero-illustration">
+                        <div class="moon-symbol">🌙</div>
+                        <div class="star-symbol">⭐</div>
+                        <div class="love-letter-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                    </div>
+                    <h1 class="hero-title">
+                        Hey, <span class="name-glow">CuteFace</span>
+                    </h1>
+                    <p class="hero-subtitle ">
+                       Welcome Potego  ,  i have build this for you from my  heart , i  could not stop thinking about you , so basicaly  this is  your website  — I know  we are  in the process  of trying to know each other but i want you to know that i cant wait for  you to  let me  love you , I   will  Love you all the days of my life Weh my sisi
+                    </p>
+                    <div class="hero-cards">
+                        <div class="mini-card" onclick="navigateTo('questions')">
+                            <div class="mini-card-icon">💌</div>
+                            <h4>About</h4>
+                            <p>Questions from my heart to yours</p>
+                            <span class="mini-card-arrow">→</span>
+                        </div>
+                        <div class="mini-card" onclick="navigateTo('date-planner')">
+                            <div class="mini-card-icon">🌹</div>
+                            <h4>Date Planner</h4>
+                            <p>Pick when and where, and i will  show up  </p>
+                            <span class="mini-card-arrow">→</span>
+                        </div>
+                        <div class="mini-card" onclick="navigateTo('timeline')">
+                            <div class="mini-card-icon">📖</div>
+                            <h4>My lady</h4>
+                            <p>The story of her, unfolding</p>
+                            <span class="mini-card-arrow">→</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Questions Page -->
+            <section class="page" id="page-questions">
+                <div class="page-header">
+                    <h2><i class="fas fa-heart-circle"></i> Questions</h2>
+                    <p>... answer when you're ready 💕</p>
+                </div>
+                <div class="questions-container" id="questionsContainer">
+                    <!-- Dynamically loaded -->
+                </div>
+            </section>
+            
+            <!-- Date Planner Page -->
+            <section class="page" id="page-date-planner">
+                <div class="page-header">
+                    <h2><i class="fas fa-calendar-heart"></i> Date Planner</h2>
+                    <p>Choose how you would like   us to  go out  together 🌹</p>
+                </div>
+                <div class="planner-container" id="plannerContainer">
+                    <!-- Dynamically loaded -->
+                </div>
+            </section>
+            
+            <!-- Timeline Page -->
+            <section class="page" id="page-timeline">
+                <div class="page-header">
+                    <h2><i class="fas fa-book-heart"></i>My lady  </h2>
+                    <p>See  i have created a 500GB space for your pictures , so whenever you send me your picture i will save it here so i can  come here when i miss you ..🌹</p>
+                </div>
+                <div class="timeline-container" id="timelineContainer">
+                    <!-- Dynamically loaded -->
+                </div>
+            </section>
+            
+        </main>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/dashboard.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/datePlanner.js"></script>
+    <script src="js/timeline.js"></script>
+</body>
+</html>
