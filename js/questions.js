@@ -16,7 +16,7 @@ const loveQuestions = [
         question: 'What do you think I love most about you? 🌹',
         options: [
             { text: 'Your beautiful smile 😊', score: 18 },
-            { text: 'Your kind heart 💖', score: 20 },
+            { text: 'Your sweat voice  💖', score: 20 },
             { text: 'The way you make me feel ✨', score: 17 },
             { text: 'Everything — I can\'t choose! 🥰', score: 20 }
         ],
@@ -46,7 +46,7 @@ const loveQuestions = [
     {
         id: 4,
         type: 'yesno',
-        question: 'Would you let me make you the happiest girl in the world ONE DAY  ? 🌍',
+        question: 'Would you let me make you the happiest wife  in the world ONE DAY  ? 🌍',
         rhetorical: true,
         romanticNote: 'Because that\'s all I really  want now ... ✨'
     },
@@ -54,7 +54,7 @@ const loveQuestions = [
     {
         id: 5,
         type: 'yesno',
-        question: 'Will you be my GirlFriend  one day  ? ♾️',
+        question: 'Will you be my Wife   one day  ? ♾️',
         rhetorical: true,
         romanticNote: 'Because my heart has already chosen you... 💖'
     }
