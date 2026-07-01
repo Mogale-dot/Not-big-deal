@@ -9,7 +9,7 @@
 // ============================================
 const galleryImages = [  
      {
-        image_url: 'assets/images/photo5.jpeg',
+        image_url: 'assets/images/photo6.jpeg',
         caption: 'my lady i missed you  😭😭😭 wa kgonega mara',
         date: 'June 30, 2026'
     },
