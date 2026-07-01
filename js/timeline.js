@@ -7,11 +7,16 @@
 // 📸 ADD YOUR IMAGES HERE, BROTHER!
 // Just add image paths and captions below
 // ============================================
-const galleryImages = [ 
+const galleryImages = [  
+     {
+        image_url: 'assets/images/photo5.jpeg',
+        caption: 'my lady i missed you  😭😭😭 wa kgonega mara',
+        date: 'June 30, 2026'
+    },
      {
         image_url: 'assets/images/photo5.jpeg',
         caption: 'My GirlFriend💕💕💕💕💕💕',
-        date: 'June 21, 2026'
+        date: 'June 29, 2026'
     },
     {
         image_url: 'assets/images/photo1.jpeg',
