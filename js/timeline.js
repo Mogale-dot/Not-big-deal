@@ -9,6 +9,21 @@
 // ============================================
 const galleryImages = [  
      {
+        image_url: 'assets/images/photo9.jpeg',
+        caption: ' A beautiful night 💕💕💕 ',
+        date: 'July 13, 2026'
+    },
+     {
+        image_url: 'assets/images/photo8.jpeg',
+        caption: ' A beautiful night 💕💕💕 ',
+        date: 'July 13, 2026'
+    }, 
+     {
+        image_url: 'assets/images/photo7.jpeg',
+        caption: 'Pretty face ! 💕💕💕😭 ',
+        date: 'July 13, 2026'
+    },
+     {
         image_url: 'assets/images/photo6.jpeg',
         caption: 'my lady i missed you  😭😭😭 wa kgonega mara',
         date: 'June 30, 2026'

@@ -151,7 +151,11 @@ function loadPageContent(pageName) {
             break;
         case 'timeline':
             if (typeof loadTimeline === 'function') loadTimeline();
-            break;
+            break; 
+
+            case 'bible-study':
+             if (typeof loadBibleStudy === 'function') loadBibleStudy();
+               break;
     }
 }
 

@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/date-planner.css">  
     <link rel="stylesheet" href="css/questions.css">
-    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/timeline.css"> 
+    <link rel="stylesheet" href="css/bible-study.css">
 </head>
 <body>
     <!-- Floating particles background -->
@@ -65,7 +66,13 @@
                     <i class="fas fa-book-heart"></i>
                     <span>My lady</span>
                     <span class="nav-sparkle">✧</span>
-                </li>
+                </li> 
+
+                <li class="nav-item" data-page="bible-study">
+              <i class="fas fa-bible"></i>
+              <span>Bible Study</span>
+             <span class="nav-sparkle">✧</span>
+              </li>
             </ul>
             
             <div class="sidebar-footer">
@@ -95,7 +102,13 @@
                     <p class="hero-subtitle ">
                        Welcome my love   ,  i have build this for you from my  heart , i  could not stop thinking about you , so basicaly  this is  your website  —  but i want you to know that you  mean   so much to me , I   will  Love you all the days of my life Weh my sisi
                     </p>
-                    <div class="hero-cards">
+                    <div class="hero-cards"> 
+                        <div class="mini-card" onclick="navigateTo('bible-study')">
+                            <div class="mini-card-icon"> <i class="fas fa-bible"></i></div>
+                            <h4>About</h4>
+                            <p>Lets study  the word Together </p>
+                            <span class="mini-card-arrow">→</span>
+                        </div>
                         <div class="mini-card" onclick="navigateTo('questions')">
                             <div class="mini-card-icon">💌</div>
                             <h4>About</h4>
@@ -114,6 +127,7 @@
                             <p>The story of her, unfolding</p>
                             <span class="mini-card-arrow">→</span>
                         </div>
+                        
                     </div>
                 </div>
             </section>
@@ -149,7 +163,17 @@
                 <div class="timeline-container" id="timelineContainer">
                     <!-- Dynamically loaded -->
                 </div>
-            </section>
+            </section> 
+
+            <section class="page" id="page-bible-study">
+    <div class="page-header">
+        <h2><i class="fas fa-bible"></i> Our Bible Study</h2>
+        <p>Growing in faith together ✝️</p>
+    </div>
+    <div class="bible-study-container" id="bibleStudyContainer">
+        <!-- Dynamically loaded -->
+    </div>
+</section>
             
         </main>
     </div>
@@ -158,6 +182,7 @@
     <script src="js/dashboard.js"></script>
     <script src="js/questions.js"></script>
     <script src="js/datePlanner.js"></script>
-    <script src="js/timeline.js"></script>
+    <script src="js/timeline.js"></script> 
+    <script src="js/bibleStudy.js"></script>
 </body>
 </html>
