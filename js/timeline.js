@@ -174,7 +174,7 @@ const galleryItems = [
         type: 'video',
         url: 'assets/videos/video.mp4',
         poster: 'assets/images/photo9.jpeg',
-        caption: 'Her cute video message 🎬💕',
+        caption: 'I love the Dress My lady   🎬💕',
         date: 'June 21 2026'
     },
 
