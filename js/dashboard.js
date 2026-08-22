@@ -179,4 +179,16 @@ function createParticles() {
         
         container.appendChild(particle);
     }
+} 
+// ============================================
+// SCROLL TO HERO CARDS
+// ============================================
+function scrollToHeroCards() {
+    const heroCards = document.getElementById('heroCards');
+    if (heroCards) {
+        heroCards.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }
 }

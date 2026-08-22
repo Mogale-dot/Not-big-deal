@@ -1,15 +1,104 @@
-// ============================================
-// TIMELINE.JS — Our Photo & Video Gallery
-// Images + Videos loaded from assets folder
-// Videos auto-play muted on scroll
-// Click to open full-screen with sound
-// ============================================
 
-// ============================================
-// 📸🎬 ADD YOUR IMAGES & VIDEOS HERE, BROTHER!
-// ============================================
 const galleryItems = [
-    // --- Videos (auto-play muted on scroll) ---
+    // --- Videos (auto-play muted on scroll) --- 
+    {
+        type: 'video',
+        url: 'assets/videos/video11.mp4',
+        poster: 'assets/images/photo9.jpeg',
+        caption: ' I was so close to drinking coffee without enough  suger😂😂😂😂',
+        date: 'August 15, 2026'
+    }, 
+    
+   
+   
+    {
+        type: 'image',
+        url: 'assets/images/photo30.jpeg',
+        caption: ' 💕💕💕',
+        date: 'August 30, 2026'
+    },
+    {
+        type: 'image',
+        url: 'assets/images/photo29.jpeg',
+        caption: ' 💕💕💕',
+        date: 'August 10, 2026'
+    },
+    {
+        type: 'image',
+        url: 'assets/images/photo28.jpeg',
+        caption: ' 💕💕💕',
+        date: 'August 10, 2026'
+    },
+     {
+        type: 'video',
+        url: 'assets/videos/video7.mp4',
+        poster: 'assets/images/photo9.jpeg',
+        caption: 'Made just  for me  😂💕',
+        date: 'August 07, 2026'
+    },
+     {
+        type: 'video',
+        url: 'assets/videos/video10.mp4',
+        poster: 'assets/images/photo9.jpeg',
+        caption: ' I love you so much 😂💕',
+       date: 'August 02, 2026'
+    },
+    {
+        type: 'video',
+        url: 'assets/videos/video8.mp4',
+        poster: 'assets/images/photo9.jpeg',
+        caption: ' I love you so much 😂💕',
+        date: 'August 02, 2026'
+    }, 
+    {
+        type: 'image',
+        url: 'assets/images/photo27.jpeg',
+        caption: ' 💕💕💕',
+        date: 'August 02, 2026'
+    },
+    {
+        type: 'image',
+        url: 'assets/images/photo26.jpeg',
+        caption: ' 💕💕💕',
+        date: 'August 02, 2026'
+    },
+    {
+        type: 'image',
+        url: 'assets/images/photo25.jpeg',
+        caption: ' 💕💕💕',
+        date: 'July 30, 2026'
+    },
+    {
+        type: 'image',
+        url: 'assets/images/photo24.jpeg',
+        caption: ' 💕💕💕',
+        date: 'July 30, 2026'
+    },
+    {
+        type: 'image',
+        url: 'assets/images/photo23.jpeg',
+        caption: 'Birthday Girl💕💕💕💕',
+        date: 'July 30, 2026'
+    },
+    {
+        type: 'image',
+        url: 'assets/images/photo22.jpeg',
+        caption: ' Birthday Girl💕💕💕💕',
+        date: 'July 30, 2026'
+    },
+    {
+        type: 'video',
+        url: 'assets/videos/video9.mp4',
+        poster: 'assets/images/photo9.jpeg',
+        caption: 'Birthday Girl💕💕💕💕',
+        date: 'July 30, 2026'
+    },
+    {
+        type: 'image',
+        url: 'assets/images/photo21.jpeg',
+        caption: ' 💕💕💕',
+        date: 'July 28, 2026'
+    },
      {
         type: 'video',
         url: 'assets/videos/video6.mp4',
@@ -310,6 +399,7 @@ function renderGallery() {
                             <div class="gallery-overlay">
                                 <i class="fas fa-heart"></i>
                                 <span>View</span>
+                                
                             </div>
                         </div>
                         <div class="gallery-card-info">

@@ -592,3 +592,284 @@
     .question-text h4 { font-size: 16px; }
     .option-text { font-size: 13px; }
 }
+/* ============================================
+   GAME MENU STYLES
+   ============================================ */
+.game-cards {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.game-card {
+    background: var(--white-pure);
+    border-radius: 20px;
+    padding: 22px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-card);
+    border: 2px solid rgba(255, 133, 162, 0.12);
+    position: relative;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--pink-soft);
+}
+
+.game-card:active {
+    transform: scale(0.97);
+}
+
+.game-card-icon {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.game-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.game-card p {
+    font-size: 13px;
+    color: var(--text-soft);
+    margin-bottom: 10px;
+}
+
+.game-card-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--pink-lightest);
+    border-radius: 15px;
+    font-size: 11px;
+    color: var(--pink-deep);
+    font-weight: 600;
+}
+
+.game-card-arrow {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    color: var(--pink-deep);
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.game-card:hover .game-card-arrow {
+    opacity: 1;
+}
+
+/* --- Back to Menu Button --- */
+.btn-back-menu {
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid rgba(255, 133, 162, 0.3);
+    border-radius: 25px;
+    color: var(--pink-deep);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-back-menu:hover {
+    background: rgba(255, 133, 162, 0.08);
+    border-color: var(--pink-deep);
+}
+
+/* ============================================
+   WOULD YOU RATHER STYLES
+   ============================================ */
+.wyr-container,
+.tot-container {
+    background: var(--white-pure);
+    border-radius: 24px;
+    padding: 25px 20px;
+    box-shadow: var(--shadow-card);
+    border: 2px solid rgba(255, 133, 162, 0.12);
+}
+
+.wyr-title,
+.tot-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wyr-options {
+    display: grid;
+    gap: 12px;
+}
+
+.wyr-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: var(--white-soft);
+    border: 2px solid rgba(255, 133, 162, 0.15);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+    text-align: left;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.wyr-option:hover {
+    border-color: var(--pink-medium);
+    transform: translateX(4px);
+}
+
+.wyr-option.selected {
+    background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+    border-color: var(--pink-deep);
+    box-shadow: 0 4px 15px rgba(255, 77, 122, 0.2);
+}
+
+.wyr-option-label {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--gradient-hero);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.wyr-option-text {
+    font-size: 14px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.wyr-or {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-soft);
+    letter-spacing: 2px;
+}
+
+.wyr-followup {
+    text-align: center;
+    padding: 15px;
+    background: var(--pink-lightest);
+    border-radius: 16px;
+    margin-top: 15px;
+    animation: fadeSlideUp 0.4s ease;
+}
+
+.wyr-followup p {
+    font-size: 14px;
+    color: var(--pink-dark);
+    font-style: italic;
+}
+
+/* ============================================
+   THIS OR THAT STYLES
+   ============================================ */
+.tot-options {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.tot-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 12px;
+    background: var(--white-soft);
+    border: 2px solid rgba(255, 133, 162, 0.15);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.tot-option:hover {
+    border-color: var(--pink-medium);
+    transform: translateY(-3px);
+}
+
+.tot-option.selected {
+    background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+    border-color: var(--pink-deep);
+    box-shadow: 0 4px 15px rgba(255, 77, 122, 0.2);
+}
+
+.tot-option-emoji {
+    font-size: 36px;
+}
+
+.tot-option-text {
+    font-size: 13px;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.tot-vs {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--pink-deep);
+    text-align: center;
+}
+
+.tot-result {
+    text-align: center;
+    padding: 12px;
+    background: var(--pink-lightest);
+    border-radius: 14px;
+    animation: fadeSlideUp 0.3s ease;
+}
+
+.tot-result p {
+    font-size: 14px;
+    color: var(--pink-dark);
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .game-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .tot-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .tot-vs {
+        text-align: center;
+        padding: 5px 0;
+    }
+    
+    .wyr-option {
+        padding: 14px;
+    }
+}

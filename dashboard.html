@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💕</text></svg>">
     
+    <!-- CSS Files -->
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/date-planner.css">  
     <link rel="stylesheet" href="css/questions.css">
@@ -28,7 +29,7 @@
     <!-- Main Container -->
     <div class="dashboard-container">
         
-        <!-- Hamburger Menu Button (Mobile Only) -->
+        <!-- Hamburger Menu Button (Always on top of hero) -->
         <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
@@ -43,7 +44,7 @@
                     <span class="avatar-letter">P</span>
                     <div class="avatar-heart">💕</div>
                 </div>
-                <h3 class="welcome-text">Welcome, <span>CuteFace </span></h3>
+                <h3 class="welcome-text">Welcome, <span>CuteFace</span></h3>
                 <p class="since-text">Your secret place ✨</p>
             </div>
             
@@ -55,7 +56,7 @@
                 </li>
                 <li class="nav-item" data-page="questions">
                     <i class="fas fa-heart-circle"></i>
-                    <span>About </span>
+                    <span>About</span>
                     <span class="nav-sparkle">✧</span>
                 </li>
                 <li class="nav-item" data-page="date-planner">
@@ -68,12 +69,11 @@
                     <span>My lady</span>
                     <span class="nav-sparkle">✧</span>
                 </li> 
-
                 <li class="nav-item" data-page="bible-study">
-              <i class="fas fa-bible"></i>
-              <span>Bible Study</span>
-             <span class="nav-sparkle">✧</span>
-              </li>
+                    <i class="fas fa-bible"></i>
+                    <span>Bible Study</span>
+                    <span class="nav-sparkle">✧</span>
+                </li>
             </ul>
             
             <div class="sidebar-footer">
@@ -87,48 +87,90 @@
         <!-- Main Content Area -->
         <main class="main-content">
             
-            <!-- Home Page -->
+            <!-- ============ HOME PAGE ============ -->
             <section class="page active" id="page-home">
-                <div class="home-hero">
-                    <div class="hero-illustration">
-                        <div class="moon-symbol">🌙</div>
-                        <div class="star-symbol">⭐</div>
-                        <div class="love-letter-icon">
-                            <i class="fas fa-envelope-open-text"></i>
+                
+                <!-- ============ VIDEO HERO SECTION ============ -->
+                <div class="video-hero">
+                    <video 
+                        class="hero-video" 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline 
+                        preload="auto"
+                        poster="assets/images/photo5.jpeg"
+                    >
+                        <source src="assets/videos/video1.mp4" type="video/mp4">
+                        <!-- Fallback if no video -->
+                    </video>
+                    
+                    <!-- Dark overlay for text readability -->
+                    <div class="hero-video-overlay"></div>
+                    
+                    <!-- Hero Content on top of video -->
+                    <div class="hero-video-content">
+                        <div class="hero-love-icon">
+                            <i class="fas fa-heart"></i>
                         </div>
+                        <h1 class="hero-video-title">
+                            Hey, <span class="hero-name">CuteFace</span>
+                        </h1>
+                        <p class="hero-video-subtitle">
+                            I built this from my heart, just for you...
+                        </p>
+                        <button class="hero-scroll-btn" onclick="window.location.href='gift.html'">
+    <span>Discover Your Surprise</span>
+    <i class="fas fa-gift"></i>
+</button>
                     </div>
-                    <h1 class="hero-title">
-                        Hey, <span class="name-glow">CuteFace</span>
-                    </h1>
-                    <p class="hero-subtitle ">
-                       Welcome my love   ,  i have build this for you from my  heart , i  could not stop thinking about you , so basicaly  this is  your website  —  but i want you to know that you  mean   so much to me , I   will  Love you all the days of my life Weh my sisi
-                    </p>
-                    <div class="hero-cards"> 
-                        <div class="mini-card" onclick="navigateTo('bible-study')">
-                            <div class="mini-card-icon"> <i class="fas fa-bible"></i></div>
-                            <h4>About</h4>
-                            <p>Lets study  the word Together </p>
-                            <span class="mini-card-arrow">→</span>
+                </div>
+                
+                <!-- Everything below the video -->
+                <div class="hero-content-below">
+                    <div class="home-hero">
+                        <div class="hero-illustration">
+                            <div class="moon-symbol">🌙</div>
+                            <div class="star-symbol">⭐</div>
+                            <div class="love-letter-icon">
+                                <i class="fas fa-envelope-open-text"></i>
+                            </div>
                         </div>
-                        <div class="mini-card" onclick="navigateTo('questions')">
-                            <div class="mini-card-icon">💌</div>
-                            <h4>About</h4>
-                            <p>Questions from my heart to yours</p>
-                            <span class="mini-card-arrow">→</span>
+                        <h1 class="hero-title">
+                            My <span class="name-glow">Love Letter</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Welcome my love, I have built this for you from my heart. 
+                            I could not stop thinking about you, so basically this is your website — 
+                            but I want you to know that you mean so much to me. 
+                            I will love you all the days of my life, Weh my sisi 💕
+                        </p>
+                        <div class="hero-cards" id="heroCards">
+                            <div class="mini-card" onclick="navigateTo('bible-study')">
+                                <div class="mini-card-icon"><i class="fas fa-bible"></i></div>
+                                <h4>Bible Study</h4>
+                                <p>Lets study the Word together</p>
+                                <span class="mini-card-arrow">→</span>
+                            </div>
+                            <div class="mini-card" onclick="navigateTo('questions')">
+                                <div class="mini-card-icon">💌</div>
+                                <h4>About</h4>
+                                <p>Questions from my heart to yours</p>
+                                <span class="mini-card-arrow">→</span>
+                            </div>
+                            <div class="mini-card" onclick="navigateTo('date-planner')">
+                                <div class="mini-card-icon">🌹</div>
+                                <h4>Date Planner</h4>
+                                <p>Pick when and where, and I will show up</p>
+                                <span class="mini-card-arrow">→</span>
+                            </div>
+                            <div class="mini-card" onclick="navigateTo('timeline')">
+                                <div class="mini-card-icon">📖</div>
+                                <h4>My lady</h4>
+                                <p>The story of her, unfolding</p>
+                                <span class="mini-card-arrow">→</span>
+                            </div>
                         </div>
-                        <div class="mini-card" onclick="navigateTo('date-planner')">
-                            <div class="mini-card-icon">🌹</div>
-                            <h4>Date Planner</h4>
-                            <p>Pick when and where, and i will  show up  </p>
-                            <span class="mini-card-arrow">→</span>
-                        </div>
-                        <div class="mini-card" onclick="navigateTo('timeline')">
-                            <div class="mini-card-icon">📖</div>
-                            <h4>My lady</h4>
-                            <p>The story of her, unfolding</p>
-                            <span class="mini-card-arrow">→</span>
-                        </div>
-                        
                     </div>
                 </div>
             </section>
@@ -148,7 +190,7 @@
             <section class="page" id="page-date-planner">
                 <div class="page-header">
                     <h2><i class="fas fa-calendar-heart"></i> Date Planner</h2>
-                    <p>Choose how you would like   us to  go out  together 🌹</p>
+                    <p>Choose how you would like us to go out together 🌹</p>
                 </div>
                 <div class="planner-container" id="plannerContainer">
                     <!-- Dynamically loaded -->
@@ -158,23 +200,24 @@
             <!-- Timeline Page -->
             <section class="page" id="page-timeline">
                 <div class="page-header">
-                    <h2><i class="fas fa-book-heart"></i>My lady  </h2>
-                    <p>See  i have created a 500GB space for your pictures , so whenever you send me your picture i will save it here so i can  come here when i miss you ..🌹</p>
+                    <h2><i class="fas fa-book-heart"></i> My lady</h2>
+                    <p style="color: black;">See, I have created a 500GB space for your pictures, so whenever you send me your picture I will save it here so I can come here when I miss you..🌹</p>
                 </div>
                 <div class="timeline-container" id="timelineContainer">
                     <!-- Dynamically loaded -->
                 </div>
             </section> 
 
+            <!-- Bible Study Page -->
             <section class="page" id="page-bible-study">
-    <div class="page-header">
-        <h2><i class="fas fa-bible"></i> Our Bible Study</h2>
-        <p>Growing in faith together ✝️</p>
-    </div>
-    <div class="bible-study-container" id="bibleStudyContainer">
-        <!-- Dynamically loaded -->
-    </div>
-</section>
+                <div class="page-header">
+                    <h2><i class="fas fa-bible"></i> Our Bible Study</h2>
+                    <p>Growing in faith together ✝️</p>
+                </div>
+                <div class="bible-study-container" id="bibleStudyContainer">
+                    <!-- Dynamically loaded -->
+                </div>
+            </section>
             
         </main>
     </div>

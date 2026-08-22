@@ -1,0 +1,753 @@
+/* ============================================
+   GIFT.CSS — Locked Present with Countdown
+   Romantic, exciting, mysterious
+   ============================================ */
+
+/* --- CSS Variables --- */
+:root {
+    --pink-lightest: #fff0f5;
+    --pink-lighter: #ffe4ec;
+    --pink-light: #ffd1e0;
+    --pink-soft: #ffb6d1;
+    --pink-medium: #ff85a2;
+    --pink-deep: #ff4d7a;
+    --pink-dark: #d6336c;
+    --rose-gold: #e8a0b4;
+    --gold: #d4af37;
+    --gold-light: #f0d060;
+    --white-soft: #fff5f7;
+    --white-pure: #ffffff;
+    --text-dark: #4a3040;
+    --text-medium: #6b4d5d;
+    --text-soft: #9b7d8d;
+    --shadow-card: 0 8px 30px rgba(255, 77, 122, 0.12);
+    --shadow-hover: 0 15px 40px rgba(255, 77, 122, 0.25);
+    --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.3);
+    --gradient-hero: linear-gradient(135deg, #ffb6d1 0%, #ff85a2 50%, #ff4d7a 100%);
+    --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #d4af37 100%);
+}
+
+/* --- Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Body --- */
+/* --- Body --- */
+body {
+    font-family: 'Quicksand', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--text-dark);
+    -webkit-tap-highlight-color: transparent;
+    
+    /* Background Image */
+    background-image: url('../assets/images/aliona-zahrai-YKfkO4XwXk0-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #ffe4ec;
+}
+
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes bgShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* --- Floating Particles --- */
+.gift-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.gift-particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: floatUp linear infinite;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) rotate(0deg) scale(0);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+        transform: translateY(-10vh) rotate(720deg) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* --- Back Button --- */
+.btn-back {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 133, 162, 0.3);
+    border-radius: 25px;
+    color: var(--pink-deep);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 77, 122, 0.15);
+}
+
+.btn-back:hover {
+    background: white;
+    transform: translateX(-3px);
+    box-shadow: 0 6px 20px rgba(255, 77, 122, 0.3);
+}
+
+/* --- Container --- */
+.gift-container {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 80px 20px 40px;
+}
+
+/* --- Header --- */
+.gift-header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeSlideDown 0.8s ease;
+}
+
+@keyframes fadeSlideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.gift-header-icon {
+    font-size: 60px;
+    animation: bounceGift 2s ease-in-out infinite;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+@keyframes bounceGift {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(-5deg); }
+    75% { transform: translateY(-5px) rotate(5deg); }
+}
+
+.gift-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.gift-header h1 span {
+    font-family: 'Dancing Script', cursive;
+    font-size: 42px;
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gift-header p {
+    font-size: 15px;
+    color: var(--text-soft);
+    font-style: italic;
+}
+
+/* --- Section Titles --- */
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    animation: fadeSlideUp 0.6s ease;
+}
+
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.title-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 133, 162, 0.4), transparent);
+}
+
+.section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--text-dark);
+    white-space: nowrap;
+}
+
+.section-title h2 i {
+    color: var(--pink-deep);
+    margin-right: 6px;
+}
+
+/* ============================================
+   LETTER CARD
+   ============================================ */
+.letter-section {
+    margin-bottom: 40px;
+}
+
+.letter-card {
+    background: var(--white-pure);
+    border-radius: 24px;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    border: 2px solid rgba(255, 133, 162, 0.12);
+    animation: fadeSlideUp 0.6s ease 0.2s both;
+    position: relative;
+    overflow: hidden;
+}
+
+.letter-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-hero);
+}
+
+.letter-lock-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    background: var(--pink-lightest);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: var(--pink-medium);
+    animation: pulseLock 2s ease-in-out infinite;
+}
+
+@keyframes pulseLock {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.letter-unlock-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: var(--pink-deep);
+    animation: celebrate 1s ease-in-out infinite;
+}
+
+@keyframes celebrate {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(-5deg); }
+    75% { transform: scale(1.05) rotate(5deg); }
+}
+
+.letter-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.letter-card > p {
+    font-size: 14px;
+    color: var(--text-soft);
+    margin-bottom: 20px;
+}
+
+/* ============================================
+   COUNTDOWN TIMER
+   ============================================ */
+.countdown-timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.timer-block {
+    background: var(--pink-lightest);
+    border-radius: 14px;
+    padding: 12px 14px;
+    min-width: 60px;
+    text-align: center;
+    border: 2px solid rgba(255, 133, 162, 0.15);
+}
+
+.timer-number {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--pink-dark);
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+}
+
+.timer-label {
+    display: block;
+    font-size: 10px;
+    color: var(--text-soft);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.timer-separator {
+    font-size: 24px;
+    color: var(--pink-medium);
+    font-weight: 700;
+    animation: blinkSeparator 1s ease-in-out infinite;
+}
+
+@keyframes blinkSeparator {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* --- Hints --- */
+.letter-hint,
+.gift-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    font-size: 13px;
+    color: var(--text-soft);
+    font-style: italic;
+}
+
+.letter-hint i {
+    color: var(--pink-deep);
+    animation: pulseIcon 1.5s ease-in-out infinite;
+}
+
+.gift-hint i {
+    color: var(--gold);
+    animation: pulseIcon 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseIcon {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* ============================================
+   UNLOCKED LETTER
+   ============================================ */
+.letter-content {
+    text-align: left;
+    padding: 15px;
+    background: var(--white-soft);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 133, 162, 0.2);
+    line-height: 1.7;
+}
+
+.letter-greeting {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    color: var(--pink-dark);
+    margin-bottom: 10px;
+}
+
+.letter-body {
+    font-size: 14px;
+    color: var(--text-medium);
+    margin-bottom: 15px;
+}
+
+.letter-signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    color: var(--pink-dark);
+    text-align: right;
+}
+
+/* ============================================
+   PRESENT CARD
+   ============================================ */
+.present-section {
+    margin-bottom: 30px;
+}
+
+.present-card {
+    background: var(--white-pure);
+    border-radius: 24px;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    animation: fadeSlideUp 0.6s ease 0.4s both;
+    position: relative;
+    overflow: hidden;
+}
+
+.present-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-gold);
+}
+
+/* --- Gift Box --- */
+.gift-box {
+    width: 100px;
+    height: 90px;
+    margin: 0 auto 15px;
+    position: relative;
+    cursor: default;
+}
+
+.gift-box-lid {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 80px;
+    height: 20px;
+    background: var(--gradient-gold);
+    border-radius: 5px 5px 0 0;
+    z-index: 2;
+}
+
+.gift-box-body {
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #d4af37, #c9a030, #d4af37);
+    border-radius: 0 0 8px 8px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gift-ribbon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 70px;
+    background: var(--gradient-hero);
+    z-index: 3;
+}
+
+.gift-bow {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    z-index: 4;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.present-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.present-card > p {
+    font-size: 14px;
+    color: var(--text-soft);
+    margin-bottom: 15px;
+}
+
+/* ============================================
+   UNLOCKED PRESENT
+   ============================================ */
+.present-reveal-icon {
+    font-size: 60px;
+    margin-bottom: 10px;
+    animation: bounceGift 1s ease-in-out infinite;
+}
+
+.present-details {
+    text-align: center;
+}
+
+.present-emoji {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.present-message {
+    font-size: 15px;
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.present-instructions {
+    background: var(--pink-lightest);
+    border-radius: 16px;
+    padding: 18px;
+    text-align: left;
+}
+
+.present-instructions h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.present-instructions ol {
+    padding-left: 20px;
+    font-size: 14px;
+    color: var(--text-medium);
+    line-height: 2;
+}
+
+.present-instructions li {
+    padding-left: 5px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.gift-footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: var(--text-soft);
+}
+
+.gift-footer i {
+    color: var(--pink-deep);
+    animation: pulseIcon 1.5s ease-in-out infinite;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .gift-container {
+        padding: 70px 15px 30px;
+    }
+    
+    .gift-header h1 {
+        font-size: 26px;
+    }
+    
+    .gift-header h1 span {
+        font-size: 34px;
+    }
+    
+    .letter-card,
+    .present-card {
+        padding: 25px 18px;
+    }
+    
+    .timer-number {
+        font-size: 22px;
+    }
+    
+    .timer-block {
+        min-width: 50px;
+        padding: 10px 10px;
+    }
+    
+    .btn-back {
+        top: 12px;
+        left: 12px;
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .timer-number {
+        font-size: 18px;
+    }
+    
+    .timer-block {
+        min-width: 42px;
+        padding: 8px 6px;
+    }
+    
+    .timer-label {
+        font-size: 8px;
+    }
+    
+    .countdown-timer {
+        gap: 4px;
+    }
+    
+    .timer-separator {
+        font-size: 16px;
+    }
+} 
+/* ============================================
+   PROGRESS BAR STYLES
+   ============================================ */
+.progress-container {
+    margin: 25px 0;
+    padding: 0 5px;
+}
+
+.progress-bar-wrapper {
+    position: relative;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: var(--pink-lightest);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 133, 162, 0.2);
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #b83a3a, #c40e11, #cb0404);
+    border-radius: 20px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+/* Shine effect on progress fill */
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(218, 6, 6, 0.4) 50%,
+        transparent 100%
+    );
+    animation: progressShine 3s ease-in-out infinite;
+}
+
+@keyframes progressShine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Glow when near 100% */
+@keyframes progressGlow {
+    0%, 100% { 
+        box-shadow: 0 0 10px rgba(229, 2, 2, 0.5);
+    }
+    50% { 
+        box-shadow: 0 0 25px rgba(231, 3, 3, 0.9);
+    }
+}
+
+.progress-percentage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding: 0 5px;
+}
+
+.progress-percentage span:first-child {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--pink-deep);
+    font-family: 'Playfair Display', serif;
+}
+
+.progress-percentage span:last-child {
+    font-size: 11px;
+    color: var(--text-soft);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.progress-hint {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-soft);
+    font-style: italic;
+    margin-top: 10px;
+    animation: fadeSlideUp 0.5s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .progress-bar {
+        height: 16px;
+    }
+    
+    .progress-percentage span:first-child {
+        font-size: 16px;
+    }
+    
+    .progress-percentage span:last-child {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 380px) {
+    .progress-bar {
+        height: 14px;
+    }
+    
+    .progress-percentage span:first-child {
+        font-size: 14px;
+    }
+}

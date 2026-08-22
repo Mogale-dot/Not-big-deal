@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎁 A Surprise For You</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎁</text></svg>">
+    
+    <link rel="stylesheet" href="css/gift.css">
+</head>
+<body>
+    <!-- Floating particles -->
+    <div class="gift-particles" id="giftParticles"></div>
+    
+    <!-- Back Button -->
+    <button class="btn-back" onclick="window.location.href='dashboard.html'">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back</span>
+    </button>
+    
+    <!-- Main Container -->
+    <div class="gift-container">
+        
+        <!-- Header -->
+        <div class="gift-header">
+            <div class="gift-header-icon">🎁</div>
+            <h1>A <span>Surprise</span> For You</h1>
+            <p>Something special is waiting... 💕</p>
+        </div>
+        
+        <!-- ============ LOVE LETTER (Locked) ============ -->
+        <div class="letter-section" id="letterSection">
+            <div class="section-title">
+                <span class="title-line"></span>
+                <h2><i class="fas fa-envelope"></i> A Letter For You</h2>
+                <span class="title-line"></span>
+            </div>
+            
+            <!-- Locked Letter -->
+            <div class="letter-card locked" id="lockedLetter">
+                <div class="letter-lock-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3>This letter is locked</h3>
+                <p>It will open when the time is right...</p>
+                
+                <!-- Progress Bar for Letter -->
+                <div class="progress-container">
+                    <div class="progress-bar-wrapper">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="letterProgressFill"></div>
+                        </div>
+                        <div class="progress-percentage">
+                            <span id="letterPercentage">0%</span>
+                            <span>Ready to Open</span>
+                        </div>
+                    </div>
+                    <p class="progress-hint" id="letterProgressHint">Loading your surprise... 💕</p>
+                </div>
+                
+                <div class="letter-hint">
+                    <i class="fas fa-heart"></i>
+                    <span>Patience, my love...😂😂😂😂</span>
+                </div>
+            </div>
+            
+            <!-- Unlocked Letter (Hidden until progress reaches 100%) -->
+            <div class="letter-card unlocked" id="unlockedLetter" style="display:none;">
+                <div class="letter-unlock-icon">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <h3>Your Letter is Ready!</h3>
+                <div class="letter-content">
+                    <p class="letter-greeting">My Dearest CuteFace,</p>
+                    <p class="letter-body">
+                        <!-- YOUR LETTER CONTENT HERE -->
+                        I've been counting down the days to tell you this...
+                        <br><br>
+                        You mean more to me than words can ever express. 
+                        Every moment with you is a gift I treasure.
+                        <br><br>
+                        Today is special because I want to give you something 
+                        that comes from the deepest part of my heart.
+                        <br><br>
+                        Scroll down to see your present...
+                    </p>
+                    <p class="letter-signature">Forever yours,<br>💕</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ============ THE PRESENT (Locked) ============ -->
+        <div class="present-section" id="presentSection">
+            <div class="section-title">
+                <span class="title-line"></span>
+                <h2><i class="fas fa-gift"></i> Your Present</h2>
+                <span class="title-line"></span>
+            </div>
+            
+            <!-- Locked Present -->
+            <div class="present-card locked" id="lockedPresent">
+                <div class="gift-box">
+                    <div class="gift-box-lid"></div>
+                    <div class="gift-box-body">
+                        <span class="gift-ribbon"></span>
+                        <span class="gift-bow">🎀</span>
+                    </div>
+                </div>
+                <h3>A Gift Awaits You</h3>
+                <p>This present will unlock on the special day...</p>
+                
+                <!-- Progress Bar for Gift -->
+                <div class="progress-container">
+                    <div class="progress-bar-wrapper">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="giftProgressFill"></div>
+                        </div>
+                        <div class="progress-percentage">
+                            <span id="giftPercentage">0%</span>
+                            <span>Ready to Open</span>
+                        </div>
+                    </div>
+                    <p class="progress-hint" id="giftProgressHint">Your present is getting ready... 🎁</p>
+                </div>
+                
+                <div class="gift-hint">
+                    <i class="fas fa-clock"></i>
+                    <span> 🗓️</span>
+                </div>
+            </div>
+            
+            <!-- Unlocked Present (Shows after progress reaches 100%) -->
+            <div class="present-card unlocked" id="unlockedPresent" style="display:none;">
+                <div class="present-reveal-icon">🎉</div>
+                <h3>Your Present is Ready!</h3>
+                <div class="present-details">
+                    <div class="present-emoji">💝</div>
+                    <p class="present-message">
+                        <!-- PRESENT DETAILS HERE -->
+                        Surprise! Your present is...
+                    </p>
+                    <div class="present-instructions">
+                        <h4>How to get your present:</h4>
+                        <ol>
+                            <li>Call me when you see this 📞</li>
+                            <li>I'll tell you where to find it 🗺️</li>
+                            <li>Get ready to smile! 😊</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="gift-footer">
+            <p>Made with <i class="fas fa-heart"></i> just for you</p>
+        </div>
+    </div>
+    
+    <script src="js/gift.js"></script>
+</body>
+</html>

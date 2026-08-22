@@ -31,17 +31,37 @@
     box-sizing: border-box;
 }
 
-/* --- Body --- */
 body {
     font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(135deg, #bc617f 0%, #b04e6b 30%, #cb6487 60%, #ac2d57 100%);
-    background-size: 400% 400%;
-    animation: bgShift 20s ease infinite;
     min-height: 100vh;
     overflow-x: hidden;
     color: var(--text-dark);
     -webkit-tap-highlight-color: transparent;
+    
+    /* Background Image */
+    background-image: url('../assets/images/aliona-zahrai-YKfkO4XwXk0-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    /* Fallback gradient behind the image (in case image doesn't load) */
+    background-color: #ffe4ec;
 }
+
+/* Dark overlay on top of background for readability */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    pointer-events: none;
+}
+
 
 @keyframes bgShift {
     0%, 100% { background-position: 0% 50%; }
@@ -743,5 +763,475 @@ hero-subtitle
         height: 42px;
         top: 12px;
         left: 12px;
+    }
+} 
+
+/* ============================================
+   MAIN CONTENT — No Padding (Pages handle own)
+   ============================================ */
+.main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* ============================================
+   PAGES — Individual Padding Control
+   ============================================ */
+.page {
+    display: none;
+    animation: fadeSlideIn 0.4s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Home page — NO padding, video goes full edge-to-edge */
+#page-home {
+    padding: 0;
+}
+
+/* Other pages — comfortable padding */
+#page-questions,
+#page-date-planner,
+#page-timeline,
+#page-bible-study {
+    padding: 40px;
+}
+
+/* ============================================
+   VIDEO HERO SECTION — Full Screen
+   ============================================ */
+.video-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    max-height: 800px;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 0;
+    background: #1a1a1a;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+
+.hero-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 77, 122, 0.35) 0%,
+        rgba(255, 133, 162, 0.25) 40%,
+        rgba(74, 48, 64, 0.6) 100%
+    );
+    z-index: 2;
+}
+
+/* ============================================
+   HERO CONTENT (Text on top of video)
+   ============================================ */
+.hero-video-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 3;
+    width: 90%;
+    max-width: 650px;
+    animation: heroFadeIn 1.2s ease;
+}
+
+@keyframes heroFadeIn {
+    from { 
+        opacity: 0; 
+        transform: translate(-50%, -30%); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translate(-50%, -50%); 
+    }
+}
+
+.hero-love-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: var(--pink-deep);
+    box-shadow: 0 8px 30px rgba(255, 77, 122, 0.4);
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.1); }
+    60% { transform: scale(1); }
+}
+
+.hero-video-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 12px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+}
+
+.hero-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 56px;
+    font-weight: 700;
+    display: inline;
+    background: linear-gradient(135deg, #ffe4ec, #ffb6d1, #ff85a2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 4px 8px rgba(255, 77, 122, 0.3));
+}
+
+.hero-video-subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* --- Scroll Button --- */
+.hero-scroll-btn {
+    padding: 14px 30px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-scroll-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hero-scroll-btn:active {
+    transform: scale(0.95);
+}
+
+.hero-scroll-btn i {
+    animation: bounceDown 1.5s ease-in-out infinite;
+}
+
+@keyframes bounceDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+}
+
+/* --- Scroll Indicator (Bottom) --- */
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    z-index: 3;
+}
+
+.hero-scroll-indicator span {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    transform: rotate(45deg);
+    animation: scrollDot 1.5s ease-in-out infinite;
+}
+
+.hero-scroll-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.hero-scroll-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes scrollDot {
+    0% { opacity: 0; transform: rotate(45deg) translate(0, 0); }
+    50% { opacity: 1; transform: rotate(45deg) translate(5px, 5px); }
+    100% { opacity: 0; transform: rotate(45deg) translate(10px, 10px); }
+}
+
+/* ============================================
+   CONTENT BELOW VIDEO
+   ============================================ */
+.hero-content-below {
+    padding: 40px;
+    background: transparent;
+}
+
+/* ============================================
+   HAMBURGER BUTTON — On Top of Video
+   ============================================ */
+.hamburger-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 200;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 133, 162, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-shadow: 0 4px 15px rgba(255, 77, 122, 0.25);
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.hamburger-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 6px 25px rgba(255, 77, 122, 0.4);
+}
+
+.hamburger-btn:active {
+    transform: scale(0.95);
+}
+
+.hamburger-line {
+    display: block;
+    width: 20px;
+    height: 2.5px;
+    background: var(--pink-deep);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-heart {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 14px;
+    animation: bounceHeart 1s ease-in-out infinite;
+}
+
+@keyframes bounceHeart {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* Hamburger Active State */
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ============================================
+   RESPONSIVE — TABLET (900px and below)
+   ============================================ */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 240px;
+        padding: 25px 15px;
+    }
+    
+    .main-content {
+        margin-left: 240px;
+        padding: 0;
+    }
+    
+    #page-questions,
+    #page-date-planner,
+    #page-timeline,
+    #page-bible-study {
+        padding: 30px 20px;
+    }
+    
+    .hero-content-below {
+        padding: 30px 20px;
+    }
+    
+    .hero-video-title {
+        font-size: 36px;
+    }
+    
+    .hero-name {
+        font-size: 48px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE / PHONE (768px and below)
+   ============================================ */
+@media (max-width: 768px) {
+    /* Show hamburger on mobile */
+    .hamburger-btn {
+        display: flex;
+    }
+    
+    /* Sidebar off-screen */
+    .sidebar {
+        transform: translateX(-100%);
+        width: 280px;
+        border-radius: 0 20px 20px 0;
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    .sidebar-overlay.active {
+        display: block;
+        opacity: 1;
+    }
+    
+    /* Main content full width */
+    .main-content {
+        margin-left: 0;
+        padding: 0;
+    }
+    
+    /* Hero video full screen on mobile */
+    .video-hero {
+        margin: 0;
+        height: 80vh;
+        min-height: 400px;
+        max-height: none;
+    }
+    
+    .hero-video-title {
+        font-size: 30px;
+    }
+    
+    .hero-name {
+        font-size: 42px;
+    }
+    
+    .hero-video-subtitle {
+        font-size: 14px;
+    }
+    
+    .hero-love-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .hero-scroll-btn {
+        padding: 12px 24px;
+        font-size: 13px;
+    }
+    
+    /* Content below video */
+    .hero-content-below {
+        padding: 25px 15px;
+    }
+    
+    /* Other pages */
+    #page-questions,
+    #page-date-planner,
+    #page-timeline,
+    #page-bible-study {
+        padding: 25px 15px;
+        padding-top: 70px; /* Space for hamburger */
+    }
+    
+    .hamburger-btn {
+        width: 42px;
+        height: 42px;
+        top: 12px;
+        left: 12px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE — SMALL PHONE (380px and below)
+   ============================================ */
+@media (max-width: 380px) {
+    .video-hero {
+        height: 70vh;
+        min-height: 350px;
+    }
+    
+    .hero-video-title {
+        font-size: 26px;
+    }
+    
+    .hero-name {
+        font-size: 36px;
+    }
+    
+    .hero-video-subtitle {
+        font-size: 13px;
+    }
+    
+    .hero-content-below {
+        padding: 20px 10px;
+    }
+    
+    #page-questions,
+    #page-date-planner,
+    #page-timeline,
+    #page-bible-study {
+        padding: 20px 10px;
+        padding-top: 65px;
+    }
+    
+    .hamburger-btn {
+        width: 38px;
+        height: 38px;
+        top: 10px;
+        left: 10px;
+    }
+    
+    .hamburger-line {
+        width: 16px;
+        height: 2px;
     }
 }
