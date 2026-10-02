@@ -14,7 +14,7 @@
     const LETTER_START_DATE = new Date('2026-08-01T00:00:00').getTime();
     
     // 🎁 PRESENT unlocks on September 15, 2026
-    const GIFT_DATE = new Date('2026-09-31T00:00:00').getTime();
+    const GIFT_DATE = new Date('2026-0-31T00:00:00').getTime();
     const GIFT_START_DATE = new Date('2026-08-01T00:00:00').getTime();
     
     // ============================================
