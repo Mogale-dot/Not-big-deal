@@ -1,6 +1,24 @@
 
 const galleryItems = [
-    // --- Videos (auto-play muted on scroll) --- 
+   {
+        type: 'image',
+        url: 'assets/images/photo31.jpeg',
+        caption: ' 💕💕💕',
+        date: 'August 30, 2026'
+    }, 
+     {
+        type: 'video',
+        url: 'assets/videos/video12.mp4',
+        poster: 'assets/images/photo9.jpeg',
+        caption: 'I love you so much 😂💕',
+        date: 'August 15, 2026'
+    }, 
+    {
+        type: 'image',
+        url: 'assets/images/photo32.jpeg',
+        caption: ' 💕💕💕',
+        date: 'August 30, 2026'
+    },
     {
         type: 'video',
         url: 'assets/videos/video11.mp4',
@@ -9,8 +27,6 @@ const galleryItems = [
         date: 'August 15, 2026'
     }, 
     
-   
-   
     {
         type: 'image',
         url: 'assets/images/photo30.jpeg',
